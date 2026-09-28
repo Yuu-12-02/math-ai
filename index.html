@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Math AI</title>
+</head>
+
+
+<body>
+
+<div class="app">
+
+    <main class="main-area">
+
+        <!-- =========================
+             HEADER
+        ========================== -->
+
+        <header class="top-bar">
+
+            <div class="brand">
+
+                <div class="logo">
+                    Math AI
+                </div>
+
+                <div class="subtitle">
+                    MATHEMATICAL CALCULATOR
+                </div>
+
+            </div>
+
+
+            <div class="top-actions">
+
+                <button
+                    id="themeToggle"
+                    class="theme-toggle"
+                >
+                    DARK
+                </button>
+
+                <button
+                    id="aiToggle"
+                    class="ai-toggle"
+                >
+                    AI
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             PROBLEM
+        ========================== -->
+
+        <section class="input-section">
+
+            <div class="section-label">
+                PROBLEM / EXPRESSION
+            </div>
+
+
+            <div class="input-box">
+
+                <input
+                    type="text"
+                    id="mathInput"
+                    placeholder="数式や数学の問題を入力してください"
+                    autocomplete="off"
+                >
+
+
+                <button id="calculateButton">
+                    CALCULATE
+                </button>
+
+            </div>
+
+
+            <div class="examples">
+                例：25 × 38　√144　x² + 3x − 4 = 0　10人から3人を選ぶ
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             LOWER AREA
+        ========================== -->
+
+        <section class="content-area">
+
+
+            <!-- =====================
+                 LEFT
+            ====================== -->
+
+            <div class="left-column">
+
+
+                <!-- ANSWER -->
+
+                <section class="answer-section">
+
+                    <div class="section-label">
+                        ANSWER
+                    </div>
+
+
+                    <div
+                        id="result"
+                        class="answer-box"
+                    >
+
+                        <div class="answer-placeholder">
+                            答えがここに表示されます
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- CALCULATOR -->
+
+                <section class="calculator-section">
+
+                    <div class="section-label">
+                        CALCULATOR
+                    </div>
+
+
+                    <div class="calculator-body">
+
+
+                        <!-- MAIN CALCULATOR -->
+
+                        <div class="main-pad">
+
+                            <button>7</button>
+                            <button>8</button>
+                            <button>9</button>
+                            <button>÷</button>
+                            <button>⌫</button>
+
+                            <button>4</button>
+                            <button>5</button>
+                            <button>6</button>
+                            <button>×</button>
+                            <button>C</button>
+
+                            <button>1</button>
+                            <button>2</button>
+                            <button>3</button>
+                            <button>−</button>
+                            <button>＝</button>
+
+                            <button>0</button>
+                            <button>.</button>
+                            <button>＋</button>
+
+                            <div></div>
+                            <div></div>
+
+                        </div>
+
+
+                        <!-- MATH BUTTONS -->
+
+                        <div class="math-pad">
+
+                            <button>²</button>
+                            <button>√</button>
+
+                            <button>³</button>
+                            <button>π</button>
+
+                            <button>x</button>
+                            <button>y</button>
+
+                            <button>a</button>
+                            <button>b</button>
+
+                            <button>c</button>
+                            <button>n</button>
+
+                            <button>(</button>
+                            <button>)</button>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+
+            <!-- =====================
+                 SOLUTION
+            ====================== -->
+
+            <aside class="solution-panel">
+
+
+                <div class="solution-header">
+
+                    <div>
+
+                        <div class="section-label">
+                            SOLUTION
+                        </div>
+
+                        <div class="solution-status">
+                            STEP BY STEP
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="solution"
+                    class="solution-content"
+                >
+
+                    <div class="solution-placeholder">
+
+                        <div class="solution-symbol">
+                            ∑
+                        </div>
+
+                        <p>
+                            問題を解くと<br>
+                            途中式がここに表示されます。
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="solution-footer">
+                    MATH AI ENGINE
+                </div>
+
+
+            </aside>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         AI PANEL
+    ========================== -->
+
+    <aside
+        id="aiPanel"
+        class="ai-panel"
+    >
+
+        <div class="ai-panel-header">
+
+            <div>
+
+                <div class="ai-title">
+                    AI TUTOR
+                </div>
+
+                <div class="ai-subtitle">
+                    MATHEMATICAL ASSISTANT
+                </div>
+
+            </div>
+
+
+            <button id="aiClose">
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="ai-content">
+
+            <div class="ai-message">
+                問題について分からないところがあれば、
+                AIに解き方や考え方を聞くことができます。
+            </div>
+
+
+            <button class="ai-action">
+                解き方を説明
+            </button>
+
+            <button class="ai-action">
+                ヒントだけ
+            </button>
+
+            <button class="ai-action">
+                別の解き方
+            </button>
+
+        </div>
+
+    </aside>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
